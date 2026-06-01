@@ -22,7 +22,10 @@
     "zustand": "^5.0.14"
   },
   "pnpm": {
-    "ignoredBuiltDependencies": ["sharp", "unrs-resolver"]
+    "ignoredBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",

@@ -2,7 +2,11 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import type { ConsumedItem, ConsumedStatus, ConsumedType } from "./data";
+import type {
+  ConsumedItem,
+  ConsumedStatus,
+  ConsumedType,
+} from "@/lib/consumed";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
