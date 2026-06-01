@@ -21,6 +21,9 @@
     "react-dom": "19.2.4",
     "zustand": "^5.0.14"
   },
+  "pnpm": {
+    "ignoredBuiltDependencies": ["sharp", "unrs-resolver"]
+  },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
     "@cloudflare/next-on-pages": "^1.13.16",
