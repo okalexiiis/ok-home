@@ -1,0 +1,11 @@
+/* Styles the highlighted text globally */
+::selection {
+  background-color: var(--blue); /* Hot pink background */
+  color: var(--background-secondary);
+}
+
+/* Mozilla Firefox support fallback */
+::-moz-selection {
+  background-color: var(--blue);
+  color: var(--background-secondary);
+}

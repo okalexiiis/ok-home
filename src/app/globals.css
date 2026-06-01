@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: hsl(20, 3.09%, 19.02%);
+  --background-secondary: hsl(20, 5.26%, 22.35%);
+  --foreground: hsl(48.46, 86.67%, 88.24%);
+  --foreground-sec: hsl(35, 17.14%, 58.82%);
+
+  --orange: hsl(23.7, 87.72%, 44.71%);
+  --gray: hsl(22, 7%, 29%);
+  --blue: hsl(157.06, 15.89%, 58.04%);
+  --green: hsl(61.21, 66.22%, 44.12%);
+  --red: hsl(6.33, 96.14%, 59.41%);
+  --purple: hsl(343.64, 46.67%, 67.65%);
+  --yellow: hsl(41.97, 95.31%, 58.24%);
+  --mint: hsl(104.12, 35.05%, 61.96%);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@theme inline {
+  --animate-marquee: marquee 18s linear infinite;
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-foreground-sec: var(--foreground-sec);
+  --color-text: var(--foreground);
+  --color-text-sec: var(--foreground-sec);
+
+  --color-gray: var(--gray);
+  --color-orange: var(--orange);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-red: var(--red);
+  --color-purple: var(--purple);
+  --color-yellow: var(--yellow);
+  --color-mint: var(--mint);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+@layer utilities {
+  .no-ring {
+    @apply focus:outline-none focus:ring-0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
