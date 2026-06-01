@@ -72,9 +72,11 @@ export function Library({ items }: { items: ConsumedItem[] }) {
   const [status, setStatus] = useState<StatusFilter>("all");
   const [type, setType] = useState<TypeFilter>("all");
 
-  const filtered = items
-    .filter((i) => status === "all" || i.status === status)
-    .filter((i) => type === "all" || i.type === type);
+  const filtered = items.filter(
+    (i) =>
+      (status === "all" || i.status === status) &&
+      (type === "all" || i.type === type),
+  );
 
   return (
     <m.section

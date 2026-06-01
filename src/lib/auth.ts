@@ -44,8 +44,7 @@ export function checkPassword(input: string): boolean {
 }
 
 export async function createSession(): Promise<void> {
-  const token = await expectedToken();
-  const cookieStore = await cookies();
+  const [token, cookieStore] = await Promise.all([expectedToken(), cookies()]);
   cookieStore.set(SESSION_COOKIE, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",

@@ -1,3 +1,21 @@
+function InlineText({ text }: { text: string }) {
+  const parts = text.split(/(\*[^*]+\*)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("*") && part.endsWith("*")) {
+          return (
+            <em key={`${i}-${part}`} className="text-foreground-sec">
+              {part.slice(1, -1)}
+            </em>
+          );
+        }
+        return part;
+      })}
+    </>
+  );
+}
+
 export function PostBody({ body }: { body: string }) {
   const blocks = body.trim().split(/\n\n+/);
 
@@ -16,25 +34,10 @@ export function PostBody({ body }: { body: string }) {
 
         return (
           <p key={key} className="font-serif text-foreground leading-relaxed">
-            {renderInline(block)}
+            <InlineText text={block} />
           </p>
         );
       })}
     </div>
   );
-}
-
-// minimal inline emphasis: *italic*
-function renderInline(text: string) {
-  const parts = text.split(/(\*[^*]+\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith("*") && part.endsWith("*")) {
-      return (
-        <em key={`${i}-${part}`} className="text-foreground-sec">
-          {part.slice(1, -1)}
-        </em>
-      );
-    }
-    return part;
-  });
 }

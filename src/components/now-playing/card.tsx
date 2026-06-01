@@ -2,7 +2,7 @@
 
 import { m } from "motion/react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import type { Track } from "@/lib/lastfm";
 
 interface Props {
@@ -14,7 +14,7 @@ export function NowPlayingCard({ track, label }: Props) {
   const copyRef = useRef<HTMLSpanElement>(null);
   const [copyWidth, setCopyWidth] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!track || !copyRef.current) return;
     setCopyWidth(copyRef.current.offsetWidth);
   }, [track]);
@@ -50,6 +50,7 @@ export function NowPlayingCard({ track, label }: Props) {
             src={track.image}
             alt={track.album}
             fill
+            sizes="56px"
             className="object-cover"
           />
         </div>

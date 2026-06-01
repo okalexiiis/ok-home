@@ -16,18 +16,16 @@ export function ConfirmDelete({
   bordered = false,
 }: Props) {
   return (
-    <form
-      action={action}
-      onSubmit={(e) => {
-        if (!window.confirm(`Delete "${label}"? This cannot be undone.`)) {
-          e.preventDefault();
-        }
-      }}
-    >
+    <form action={action}>
       <input type="hidden" name="slug" value={slug} />
       {context && <input type="hidden" name="context" value={context} />}
       <button
-        type="submit"
+        type="button"
+        onClick={(e) => {
+          if (window.confirm(`Delete "${label}"? This cannot be undone.`)) {
+            (e.currentTarget.closest("form") as HTMLFormElement).requestSubmit();
+          }
+        }}
         className={
           bordered
             ? "font-mono text-xs px-3 py-1.5 border border-gray text-foreground-sec hover:text-red hover:border-red/50 transition-colors cursor-pointer"

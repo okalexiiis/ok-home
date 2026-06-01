@@ -1,13 +1,26 @@
 "use client";
 
 import { AnimatePresence, m } from "motion/react";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 const titleText = "Welcome home";
 const titleChars = titleText
   .split("")
   .map((char, i) => ({ char, key: `t${i}`, delay: i * 0.03 }));
 const clockPositions = ["h0", "h1", "c0", "m0", "m1", "c1", "s0", "s1"];
+
+function subscribe(callback: () => void) {
+  const interval = setInterval(callback, 1000);
+  return () => clearInterval(interval);
+}
+
+function getSnapshot() {
+  return Math.floor(Date.now() / 1000);
+}
+
+function getServerSnapshot() {
+  return 0;
+}
 
 function ClockDigit({ digit }: { digit: string }) {
   return (
@@ -27,13 +40,12 @@ function ClockDigit({ digit }: { digit: string }) {
 }
 
 export function Welcome() {
-  const [date, setDate] = useState<Date | null>(null);
-
-  useEffect(() => {
-    setDate(new Date());
-    const interval = setInterval(() => setDate(new Date()), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const epochSeconds = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
+  const date = epochSeconds ? new Date(epochSeconds * 1000) : null;
 
   const hours = date?.getHours().toString().padStart(2, "0") ?? "--";
   const minutes = date?.getMinutes().toString().padStart(2, "0") ?? "--";
