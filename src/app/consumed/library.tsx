@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useState } from "react";
 import type {
   ConsumedItem,
@@ -77,7 +77,7 @@ export function Library({ items }: { items: ConsumedItem[] }) {
     .filter((i) => type === "all" || i.type === type);
 
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-4"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -143,6 +143,6 @@ export function Library({ items }: { items: ConsumedItem[] }) {
           </p>
         )}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

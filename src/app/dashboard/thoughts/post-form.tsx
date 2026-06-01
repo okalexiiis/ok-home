@@ -81,7 +81,7 @@ export function PostForm({ post }: { post?: Post }) {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="body" className={labelClass}>
-          body — blank line = paragraph, "## " = heading, *text* = italic
+          body: blank line = paragraph, "## " = heading, *text* = italic
         </label>
         <textarea
           id="body"

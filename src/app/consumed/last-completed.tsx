@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { ConsumedItem } from "@/lib/consumed";
 import { getMeta } from "./meta";
 
@@ -8,7 +8,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export function LastCompleted({ items }: { items: ConsumedItem[] }) {
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -20,7 +20,7 @@ export function LastCompleted({ items }: { items: ConsumedItem[] }) {
       </h2>
       <div className="flex flex-col divide-y divide-gray/40">
         {items.map((item, i) => (
-          <motion.div
+          <m.div
             key={item.name}
             className="flex items-start gap-4 py-4"
             initial={{ opacity: 0, y: 12 }}
@@ -62,9 +62,9 @@ export function LastCompleted({ items }: { items: ConsumedItem[] }) {
                 </span>
               ) : null}
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

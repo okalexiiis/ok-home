@@ -47,15 +47,19 @@ export async function saveList(
   if (md === "list") {
     items = String(formData.get("items") ?? "")
       .split("\n")
-      .map((s) => s.trim())
-      .filter(Boolean);
+      .flatMap((s) => {
+        const r = s.trim();
+        return r ? [r] : [];
+      });
   } else {
     for (let i = 0; i < 5; i++) {
       const label = String(formData.get(`tier_label_${i}`) ?? "").trim();
       const tierItems = String(formData.get(`tier_items_${i}`) ?? "")
         .split(",")
-        .map((s) => s.trim())
-        .filter(Boolean);
+        .flatMap((s) => {
+          const r = s.trim();
+          return r ? [r] : [];
+        });
       if (label && tierItems.length > 0) {
         tiers.push({ label, items: tierItems });
       }

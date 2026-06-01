@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { ConsumedItem } from "@/lib/consumed";
 import { getMeta } from "./meta";
 
@@ -10,7 +10,7 @@ export function CurrentlyConsuming({ items }: { items: ConsumedItem[] }) {
   if (items.length === 0) return null;
 
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -22,7 +22,7 @@ export function CurrentlyConsuming({ items }: { items: ConsumedItem[] }) {
       </h2>
       <div className="grid grid-cols-2 gap-4">
         {items.map((item, i) => (
-          <motion.div
+          <m.div
             key={item.slug}
             className="group relative flex flex-col gap-2 border-4 border-gray border-t-green p-4 overflow-hidden"
             initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
@@ -32,10 +32,10 @@ export function CurrentlyConsuming({ items }: { items: ConsumedItem[] }) {
             whileHover={{ y: -2 }}
           >
             {/* corner glow */}
-            <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-green opacity-10 blur-[80px] transition-opacity duration-500 group-hover:opacity-50" />
+            <div className="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-green opacity-10 blur-[80px] transition-opacity duration-500 group-hover:opacity-50" />
 
             {/* shimmer */}
-            <motion.div
+            <m.div
               className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-green/5 to-transparent"
               animate={{ x: ["-100%", "200%"] }}
               transition={{
@@ -74,9 +74,9 @@ export function CurrentlyConsuming({ items }: { items: ConsumedItem[] }) {
                 "{item.comment}"
               </p>
             )}
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

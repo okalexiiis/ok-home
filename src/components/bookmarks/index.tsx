@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
-export const bookmarks = [
+const bookmarks = [
   {
     name: "gh",
     url: "github.com/okalexiiis",
@@ -31,7 +31,7 @@ export function Bookmarks() {
   return (
     <div className="flex gap-4 w-full">
       {bookmarks.map((bookmark, index) => (
-        <motion.a
+        <m.a
           key={bookmark.name}
           href={`https://${bookmark.url}`}
           target="_blank"
@@ -46,7 +46,7 @@ export function Bookmarks() {
           }}
         >
           {bookmark.name}
-        </motion.a>
+        </m.a>
       ))}
     </div>
   );

@@ -39,8 +39,10 @@ export async function saveItem(
   const status = String(formData.get("status") ?? "").trim() as ConsumedStatus;
   const genres = String(formData.get("genres") ?? "")
     .split(",")
-    .map((g) => g.trim())
-    .filter(Boolean);
+    .flatMap((g) => {
+      const r = g.trim();
+      return r ? [r] : [];
+    });
 
   if (!name) return { error: "name is required" };
   if (genres.length === 0) return { error: "at least one genre is required" };

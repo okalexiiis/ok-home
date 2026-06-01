@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useState } from "react";
 import type { Game, GameStatus } from "@/lib/games";
 
@@ -30,7 +30,7 @@ export function Library({ games }: { games: Game[] }) {
     filter === "all" ? games : games.filter((g) => g.status === filter);
 
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -96,6 +96,6 @@ export function Library({ games }: { games: Game[] }) {
           </div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

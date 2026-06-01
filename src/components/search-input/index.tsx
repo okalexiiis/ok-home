@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import {
   type SearchEngine,
   searchEngines,
@@ -54,7 +54,7 @@ export function SearchInput() {
     selectedEngine.name === engine.name;
 
   return (
-    <motion.form
+    <m.form
       className={`flex items-stretch border-b-2 border-gray h-14 w-full text-foreground font-sans transition-colors ${selected.border}`}
       initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -66,12 +66,13 @@ export function SearchInput() {
     >
       {/* INPUT (70%) */}
       <div className="flex items-center gap-2 px-3 h-full w-[70%]">
-        <Search className={`w-4 h-4 ${selected.icon}`} />
+        <Search className={`size-4 ${selected.icon}`} />
 
         <input
           className="no-ring h-full w-full bg-transparent outline-none"
           type="text"
           placeholder="Search..."
+          aria-label="Search"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
@@ -98,6 +99,6 @@ export function SearchInput() {
           );
         })}
       </div>
-    </motion.form>
+    </m.form>
   );
 }

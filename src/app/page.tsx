@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Bookmarks } from "@/components/bookmarks";
 import { NowPlaying } from "@/components/now-playing";
 import { Rooms } from "@/components/rooms";
@@ -6,6 +7,11 @@ import { Footer } from "@/components/shared/footer";
 import { Welcome } from "@/components/welcome";
 
 export const runtime = "edge";
+
+export const metadata: Metadata = {
+  title: "ok home",
+  description: "Personal homepage.",
+};
 
 export default function Home() {
   return (

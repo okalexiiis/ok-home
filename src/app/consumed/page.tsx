@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/shared/footer";
+
+export const metadata: Metadata = {
+  title: "consumed",
+  description: "Manga, movies, shows, and more.",
+};
 import { ListsSection } from "@/components/shared/lists";
 import {
   computeConsumedStats,

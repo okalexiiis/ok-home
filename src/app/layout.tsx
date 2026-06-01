@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader, Space_Mono } from "next/font/google";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
 export const runtime = "edge";
@@ -35,7 +36,9 @@ export default function RootLayout({
       lang="en"
       className={`${interSans.variable} ${newsReader.variable} ${spaceMono.variable}  h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col items-center">{children}</body>
+      <body className="min-h-full flex flex-col items-center">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

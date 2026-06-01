@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import Link from "next/link";
 import { formatDate } from "@/lib/slug";
 import type { Post } from "@/lib/thoughts";
 
 const ease = [0.16, 1, 0.3, 1] as const;
-const MotionLink = motion(Link);
+const MotionLink = m(Link);
 
 export function PostList({ posts }: { posts: Post[] }) {
   if (posts.length === 0) {

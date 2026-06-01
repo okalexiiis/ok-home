@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = m(Link);
 
-export const RoomsItems = [
+const RoomsItems = [
   {
     name: "music",
     route: "/music",
@@ -102,7 +102,7 @@ export function Rooms() {
             whileHover={{ y: -3 }}
           >
             <div
-              className={`pointer-events-none absolute -top-12 -right-12 w-32 h-32 rounded-full ${colors?.glow} opacity-0 blur-[50px] transition-opacity duration-500 group-hover:opacity-30`}
+              className={`pointer-events-none absolute -top-12 -right-12 size-32 rounded-full ${colors?.glow} opacity-0 blur-[50px] transition-opacity duration-500 group-hover:opacity-30`}
             />
 
             <section className="flex justify-between items-center text-orange font-mono text-sm mb-2">

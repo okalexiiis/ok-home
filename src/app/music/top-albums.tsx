@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { TopAlbum } from "@/lib/lastfm";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -13,7 +13,7 @@ export function TopAlbums({ albums }: { albums: TopAlbum[] }) {
       </h2>
       <div className="flex flex-col divide-y divide-gray/40">
         {albums.map((album, i) => (
-          <motion.div
+          <m.div
             key={album.name}
             className="flex items-center gap-3 h-14"
             initial={{ opacity: 0, y: 10 }}
@@ -39,7 +39,7 @@ export function TopAlbums({ albums }: { albums: TopAlbum[] }) {
             <span className="font-mono text-xs text-foreground-sec shrink-0">
               {album.playcount.toLocaleString()}
             </span>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

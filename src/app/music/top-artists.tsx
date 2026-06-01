@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { Artist } from "@/lib/lastfm";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -13,7 +13,7 @@ export function TopArtists({ artists }: { artists: Artist[] }) {
       </h2>
       <div className="flex flex-col divide-y divide-gray/40">
         {artists.map((artist, i) => (
-          <motion.div
+          <m.div
             key={artist.name}
             className="flex items-center gap-3 h-14"
             initial={{ opacity: 0, y: 10 }}
@@ -34,7 +34,7 @@ export function TopArtists({ artists }: { artists: Artist[] }) {
             <span className="font-mono text-xs text-foreground-sec shrink-0">
               {artist.playcount.toLocaleString()}
             </span>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

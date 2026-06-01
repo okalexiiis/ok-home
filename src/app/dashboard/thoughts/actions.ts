@@ -28,8 +28,10 @@ export async function savePost(
     new Date().toISOString().slice(0, 10);
   const tags = String(formData.get("tags") ?? "")
     .split(",")
-    .map((t) => t.trim().replace(/^#/, ""))
-    .filter(Boolean);
+    .flatMap((t) => {
+      const r = t.trim().replace(/^#/, "");
+      return r ? [r] : [];
+    });
 
   if (!title) return { error: "title is required" };
   if (!body) return { error: "body is required" };

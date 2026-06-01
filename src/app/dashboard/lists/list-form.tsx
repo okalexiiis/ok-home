@@ -93,7 +93,7 @@ export function ListForm({ list }: { list?: ItemList }) {
       {mode === "list" && (
         <div className="flex flex-col gap-1.5">
           <label htmlFor="list-items" className={labelClass}>
-            items — one per line
+            items: one per line
           </label>
           <textarea
             id="list-items"
@@ -108,17 +108,19 @@ export function ListForm({ list }: { list?: ItemList }) {
 
       {mode === "tiers" && (
         <div className="flex flex-col gap-3">
-          <p className={labelClass}>tiers — items comma separated</p>
+          <p className={labelClass}>tiers: items comma separated</p>
           {DEFAULT_TIER_LABELS.map((defaultLabel, i) => (
             <div key={defaultLabel} className="flex items-center gap-2">
               <input
                 name={`tier_label_${i}`}
                 defaultValue={list?.tiers[i]?.label ?? defaultLabel}
-                className="no-ring w-10 shrink-0 bg-background border border-gray focus:border-yellow outline-none px-2 py-2 font-mono text-sm text-foreground caret-foreground text-center transition-colors"
+                aria-label={`tier ${defaultLabel} label`}
+                className="no-ring w-10 shrink-0 bg-background border border-gray focus:border-yellow outline-none p-2 font-mono text-sm text-foreground caret-foreground text-center transition-colors"
               />
               <input
                 name={`tier_items_${i}`}
                 defaultValue={list?.tiers[i]?.items.join(", ") ?? ""}
+                aria-label={`tier ${defaultLabel} items`}
                 className="no-ring flex-1 min-w-0 bg-background border border-gray focus:border-yellow outline-none px-3 py-2 font-mono text-sm text-foreground caret-foreground transition-colors"
                 placeholder="item1, item2, item3..."
               />

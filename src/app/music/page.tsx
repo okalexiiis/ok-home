@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/shared/footer";
+
+export const metadata: Metadata = {
+  title: "music",
+  description: "What I am listening to.",
+};
 import { ListsSection } from "@/components/shared/lists";
 import {
   getRecentTracks,

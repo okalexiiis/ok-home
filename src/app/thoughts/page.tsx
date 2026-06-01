@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/shared/footer";
+
+export const metadata: Metadata = {
+  title: "thoughts",
+  description: "Random thoughts and ideas.",
+};
 import { getAllPosts } from "@/lib/thoughts";
 import { PostList } from "./post-list";
 

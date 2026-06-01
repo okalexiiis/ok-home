@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { relativeTime, type Track } from "@/lib/lastfm";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function RecentScrobbles({ tracks }: { tracks: Track[] }) {
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -19,7 +19,7 @@ export function RecentScrobbles({ tracks }: { tracks: Track[] }) {
       </h2>
       <div className="flex flex-col divide-y divide-gray/40">
         {tracks.map((track, i) => (
-          <motion.div
+          <m.div
             key={`${track.name}-${i}`}
             className="flex items-center justify-between py-3 gap-4"
             initial={{ opacity: 0, y: 10 }}
@@ -48,9 +48,9 @@ export function RecentScrobbles({ tracks }: { tracks: Track[] }) {
                 ""
               )}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

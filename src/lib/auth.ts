@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-export const SESSION_COOKIE = "okhome_session";
+const SESSION_COOKIE = "okhome_session";
 
 const PASSWORD = process.env.DASHBOARD_PASSWORD ?? "";
 

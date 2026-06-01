@@ -96,7 +96,7 @@ export function ListsSection({
                 {itemCount(list)} items
               </span>
               <ChevronRight
-                className={`w-3 h-3 text-foreground-sec transition-transform duration-200 group-open:rotate-90`}
+                className={`size-3 text-foreground-sec transition-transform duration-200 group-open:rotate-90`}
               />
             </div>
           </summary>

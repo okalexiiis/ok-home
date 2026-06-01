@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Track } from "@/lib/lastfm";
@@ -22,17 +22,17 @@ export function NowPlayingCard({ track, label }: Props) {
   if (!track) return null;
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       className="group relative flex w-full items-center gap-4 border-4 border-gray border-t-blue overflow-hidden p-4"
     >
       {/* corner glow */}
-      <div className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full bg-blue opacity-15 blur-[80px] transition-opacity duration-700 group-hover:opacity-60" />
+      <div className="pointer-events-none absolute -top-16 -right-16 size-48 rounded-full bg-blue opacity-15 blur-[80px] transition-opacity duration-700 group-hover:opacity-60" />
 
       {/* center shimmer */}
-      <motion.div
+      <m.div
         className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-blue/5 to-transparent"
         animate={{ x: ["-100%", "200%"] }}
         transition={{
@@ -45,7 +45,7 @@ export function NowPlayingCard({ track, label }: Props) {
 
       {/* album art */}
       {track.image && (
-        <div className="relative shrink-0 w-14 h-14">
+        <div className="relative shrink-0 size-14">
           <Image
             src={track.image}
             alt={track.album}
@@ -67,7 +67,7 @@ export function NowPlayingCard({ track, label }: Props) {
         </div>
 
         <div className="overflow-hidden whitespace-nowrap">
-          <motion.div
+          <m.div
             className="inline-flex"
             animate={{ x: copyWidth ? [0, -copyWidth] : 0 }}
             transition={{
@@ -81,14 +81,14 @@ export function NowPlayingCard({ track, label }: Props) {
               ref={copyRef}
               className="font-serif text-3xl text-foreground pr-24"
             >
-              {track.name} — {track.artist}
+              {track.name} - {track.artist}
             </span>
             <span className="font-serif text-3xl text-foreground pr-24">
-              {track.name} — {track.artist}
+              {track.name} - {track.artist}
             </span>
-          </motion.div>
+          </m.div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

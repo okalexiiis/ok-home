@@ -8,6 +8,7 @@ export async function requireAuth() {
 }
 
 export async function logout() {
+  if (!(await isAuthenticated())) redirect("/login");
   await destroySession();
   redirect("/login");
 }

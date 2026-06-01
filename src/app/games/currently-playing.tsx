@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { Game } from "@/lib/games";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function CurrentlyPlaying({ game }: { game: Game }) {
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -17,16 +17,16 @@ export function CurrentlyPlaying({ game }: { game: Game }) {
       <h2 className="font-mono text-xs text-foreground-sec tracking-widest uppercase">
         currently playing
       </h2>
-      <motion.div
+      <m.div
         className="group relative flex flex-col gap-3 border-4 border-gray border-t-orange p-5 overflow-hidden"
         whileHover={{ y: -2 }}
         transition={{ duration: 0.2 }}
       >
         {/* corner glow */}
-        <div className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full bg-orange opacity-10 blur-[80px] transition-opacity duration-500 group-hover:opacity-50" />
+        <div className="pointer-events-none absolute -top-16 -right-16 size-48 rounded-full bg-orange opacity-10 blur-[80px] transition-opacity duration-500 group-hover:opacity-50" />
 
         {/* shimmer */}
-        <motion.div
+        <m.div
           className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-orange/5 to-transparent"
           animate={{ x: ["-100%", "200%"] }}
           transition={{
@@ -61,7 +61,7 @@ export function CurrentlyPlaying({ game }: { game: Game }) {
             {game.hours}h played
           </p>
         )}
-      </motion.div>
-    </motion.section>
+      </m.div>
+    </m.section>
   );
 }

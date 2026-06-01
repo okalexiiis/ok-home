@@ -1,17 +1,17 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { MusicPick, MusicPlaylist } from "@/lib/music-pick";
 
 export function MusicPickCard({ pick }: { pick: MusicPick }) {
   return (
-    <motion.div
+    <m.div
       className="group relative border border-foreground/10 hover:border-blue p-5 transition-colors duration-200 flex flex-col gap-2 overflow-hidden"
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-blue opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-30" />
-      <motion.div
+      <div className="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-blue opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-30" />
+      <m.div
         className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-blue/5 to-transparent"
         animate={{ x: ["-100%", "200%"] }}
         transition={{
@@ -53,19 +53,19 @@ export function MusicPickCard({ pick }: { pick: MusicPick }) {
           </a>
         </div>
       )}
-    </motion.div>
+    </m.div>
   );
 }
 
 export function MusicPlaylistCard({ playlist }: { playlist: MusicPlaylist }) {
   return (
-    <motion.div
+    <m.div
       className="group relative border border-foreground/10 hover:border-blue p-5 transition-colors duration-200 flex flex-col gap-2 overflow-hidden"
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-blue opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-30" />
-      <motion.div
+      <div className="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-blue opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-30" />
+      <m.div
         className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-blue/5 to-transparent"
         animate={{ x: ["-100%", "200%"] }}
         transition={{
@@ -102,6 +102,6 @@ export function MusicPlaylistCard({ playlist }: { playlist: MusicPlaylist }) {
           open ↗
         </a>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

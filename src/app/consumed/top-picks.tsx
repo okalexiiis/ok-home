@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { ConsumedItem } from "@/lib/consumed";
 import { getMeta } from "./meta";
 
@@ -23,7 +23,7 @@ function PickCard({
     size === "lg" ? "text-2xl" : size === "md" ? "text-lg" : "text-base";
 
   return (
-    <motion.div
+    <m.div
       className="group relative flex flex-col gap-2 border border-gray p-4 border-t-green h-full overflow-hidden"
       initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -31,7 +31,7 @@ function PickCard({
       transition={{ duration: 0.5, ease, delay: Math.min(index * 0.07, 0.35) }}
       whileHover={{ y: -2 }}
     >
-      <div className="pointer-events-none absolute -top-10 -right-10 w-28 h-28 rounded-full bg-green opacity-0 blur-[50px] transition-opacity duration-500 group-hover:opacity-30" />
+      <div className="pointer-events-none absolute -top-10 -right-10 size-28 rounded-full bg-green opacity-0 blur-[50px] transition-opacity duration-500 group-hover:opacity-30" />
 
       <div className="flex items-start justify-between gap-2">
         <span className={`font-mono text-green font-bold ${rankSize}`}>
@@ -58,7 +58,7 @@ function PickCard({
         <p className="font-mono text-xs text-green">{item.type}</p>
         <p className="font-mono text-xs text-foreground-sec">{getMeta(item)}</p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -66,7 +66,7 @@ export function TopPicks({ items }: { items: ConsumedItem[] }) {
   const [first, second, third, fourth, fifth, ...base] = items;
 
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-4"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -110,6 +110,6 @@ export function TopPicks({ items }: { items: ConsumedItem[] }) {
           ))}
         </div>
       )}
-    </motion.section>
+    </m.section>
   );
 }

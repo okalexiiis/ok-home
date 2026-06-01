@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { Game } from "@/lib/games";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function LastCompleted({ games }: { games: Game[] }) {
   return (
-    <motion.section
+    <m.section
       className="w-full flex flex-col gap-3"
       initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -19,7 +19,7 @@ export function LastCompleted({ games }: { games: Game[] }) {
       </h2>
       <div className="flex flex-col divide-y divide-gray/40">
         {games.map((game, i) => (
-          <motion.div
+          <m.div
             key={game.name}
             className="flex items-start gap-4 py-4"
             initial={{ opacity: 0, y: 12 }}
@@ -55,9 +55,9 @@ export function LastCompleted({ games }: { games: Game[] }) {
                 </span>
               )}
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }
