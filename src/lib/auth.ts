@@ -38,7 +38,7 @@ async function expectedToken(): Promise<string> {
   return hmacHex("okhome-dashboard-v1");
 }
 
-export function checkPassword(input: string): boolean {
+export function verifyAuth(input: string): boolean {
   if (!PASSWORD) return false;
   return timingSafeEqual(input, PASSWORD);
 }
@@ -59,7 +59,7 @@ export async function destroySession(): Promise<void> {
   cookieStore.delete(SESSION_COOKIE);
 }
 
-export async function isAuthenticated(): Promise<boolean> {
+export async function validateSession(): Promise<boolean> {
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_COOKIE)?.value;
   if (!token) return false;

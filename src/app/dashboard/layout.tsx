@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { DashboardNav } from "@/components/dashboard/nav";
-import { isAuthenticated } from "@/lib/auth";
+import { validateSession } from "@/lib/auth";
 
 
 export const dynamic = "force-dynamic";
@@ -10,7 +10,7 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  if (!(await isAuthenticated())) {
+  if (!(await validateSession())) {
     redirect("/login");
   }
 
