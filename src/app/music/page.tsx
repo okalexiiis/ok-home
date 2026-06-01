@@ -22,6 +22,8 @@ import { TopArtists } from "./top-artists";
 import { TopSongs } from "./top-songs";
 
 
+export const dynamic = "force-dynamic";
+
 export default async function Music() {
   const [tracks, topTracks, topAlbums, artists, pick, playlist, lists] =
     await Promise.all([
