@@ -1,4 +1,4 @@
-import type { Game } from "./data";
+import type { Game } from "@/lib/games";
 
 export function DroppedGames({ games }: { games: Game[] }) {
   if (games.length === 0) return null;

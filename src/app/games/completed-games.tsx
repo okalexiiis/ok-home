@@ -1,4 +1,4 @@
-import type { Game } from "./data";
+import type { Game } from "@/lib/games";
 
 export function CompletedGames({ games }: { games: Game[] }) {
   return (
