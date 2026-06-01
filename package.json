@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cloudflare": "next build && next-on-pages",
-    "preview:cloudflare": "next build && next-on-pages && wrangler pages dev .vercel/output/static",
+    "build:cloudflare": "next build && npx vercel build && next-on-pages --skip-build",
+    "preview:cloudflare": "next build && npx vercel build && next-on-pages --skip-build && wrangler pages dev .vercel/output/static",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
