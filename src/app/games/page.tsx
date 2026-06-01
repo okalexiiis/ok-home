@@ -19,7 +19,6 @@ import { LastCompleted } from "./last-completed";
 import { Library } from "./library";
 import { Stats } from "./stats";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 

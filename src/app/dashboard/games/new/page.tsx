@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { GameForm } from "../game-form";
 
-export const runtime = "edge";
 
 export default function NewGame() {
   return (

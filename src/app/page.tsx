@@ -6,7 +6,6 @@ import { SearchInput } from "@/components/search-input";
 import { Footer } from "@/components/shared/footer";
 import { Welcome } from "@/components/welcome";
 
-export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "ok home",

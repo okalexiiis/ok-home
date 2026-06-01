@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PostForm } from "../post-form";
 
-export const runtime = "edge";
 
 export default function NewPost() {
   return (

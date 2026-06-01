@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getItem } from "@/lib/consumed";
 import { ItemForm } from "../../item-form";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 

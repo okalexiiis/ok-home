@@ -3,7 +3,6 @@ import { Inter, Newsreader, Space_Mono } from "next/font/google";
 import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
-export const runtime = "edge";
 
 const interSans = Inter({
   variable: "--font-sans",

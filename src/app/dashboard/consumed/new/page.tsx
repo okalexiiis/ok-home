@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ItemForm } from "../item-form";
 
-export const runtime = "edge";
 
 export default function NewItem() {
   return (

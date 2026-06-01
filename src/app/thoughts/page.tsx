@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 import { getAllPosts } from "@/lib/thoughts";
 import { PostList } from "./post-list";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 

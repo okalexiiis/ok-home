@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getPost } from "@/lib/thoughts";
 import { PostForm } from "../../post-form";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 

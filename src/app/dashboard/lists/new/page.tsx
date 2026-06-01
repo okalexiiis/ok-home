@@ -1,6 +1,5 @@
 import { ListForm } from "../list-form";
 
-export const runtime = "edge";
 
 export default function NewList() {
   return (

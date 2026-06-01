@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getGame } from "@/lib/games";
 import { GameForm } from "../../game-form";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 

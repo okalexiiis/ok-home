@@ -21,7 +21,6 @@ import { Library } from "./library";
 import { Stats } from "./stats";
 import { TopPicks } from "./top-picks";
 
-export const runtime = "edge";
 
 export const dynamic = "force-dynamic";
 
