@@ -3,6 +3,8 @@ import { ConfirmDelete } from "@/components/dashboard/confirm-delete";
 import { getAllItems } from "@/lib/consumed";
 import { removeItem } from "./actions";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 const statusColor: Record<string, string> = {

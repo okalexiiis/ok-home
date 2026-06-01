@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Newsreader, Space_Mono } from "next/font/google";
 import "./globals.css";
 
+export const runtime = "edge";
+
 const interSans = Inter({
   variable: "--font-sans",
   subsets: ["latin"],

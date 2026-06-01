@@ -6,6 +6,8 @@ import { getCurrentPick } from "@/lib/music-pick";
 import { getAllPosts } from "@/lib/thoughts";
 import { logout } from "./actions";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 const sections = [

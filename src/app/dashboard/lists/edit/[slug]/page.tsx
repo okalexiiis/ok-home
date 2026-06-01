@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { getList } from "@/lib/lists";
 import { ListForm } from "../../list-form";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 export default async function EditList({

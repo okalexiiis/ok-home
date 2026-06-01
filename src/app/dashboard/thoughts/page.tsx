@@ -3,6 +3,8 @@ import { ConfirmDelete } from "@/components/dashboard/confirm-delete";
 import { formatDate, getAllPosts } from "@/lib/thoughts";
 import { removePost } from "./actions";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 export default async function ThoughtsDashboard() {

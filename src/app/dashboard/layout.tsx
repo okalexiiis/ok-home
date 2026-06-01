@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { DashboardNav } from "@/components/dashboard/nav";
 import { isAuthenticated } from "@/lib/auth";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 export default async function DashboardLayout({

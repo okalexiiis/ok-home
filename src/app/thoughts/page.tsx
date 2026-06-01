@@ -3,6 +3,8 @@ import { Footer } from "@/components/shared/footer";
 import { getAllPosts } from "@/lib/thoughts";
 import { PostList } from "./post-list";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 export default async function Thoughts() {

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PostForm } from "../post-form";
 
+export const runtime = "edge";
+
 export default function NewPost() {
   return (
     <div className="flex flex-col flex-1 gap-6 selection:bg-purple selection:text-background">

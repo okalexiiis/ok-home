@@ -2,6 +2,8 @@ import { getCurrentPick, getCurrentPlaylist } from "@/lib/music-pick";
 import { PickForm } from "./pick-form";
 import { PlaylistForm } from "./playlist-form";
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 
 export default async function MusicDashboard() {

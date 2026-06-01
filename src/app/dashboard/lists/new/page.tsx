@@ -1,5 +1,7 @@
 import { ListForm } from "../list-form";
 
+export const runtime = "edge";
+
 export default function NewList() {
   return (
     <div className="flex flex-col flex-1 gap-8 selection:bg-yellow selection:text-background">

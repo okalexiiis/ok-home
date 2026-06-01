@@ -15,6 +15,8 @@ import { TopAlbums } from "./top-albums";
 import { TopArtists } from "./top-artists";
 import { TopSongs } from "./top-songs";
 
+export const runtime = "edge";
+
 export default async function Music() {
   const [tracks, topTracks, topAlbums, artists, pick, playlist, lists] =
     await Promise.all([
