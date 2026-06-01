@@ -98,7 +98,7 @@ export function TopPicks({ items }: { items: ConsumedItem[] }) {
       )}
 
       {base.length > 0 && (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {base.map((item, i) => (
             <PickCard
               key={item.name}

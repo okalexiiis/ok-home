@@ -36,7 +36,7 @@ interface Props {
 
 export function Stats({ total, hours, completed }: Props) {
   return (
-    <div className="grid grid-cols-3 gap-4 w-full">
+    <div className="grid grid-cols-3 gap-2 md:gap-4 w-full">
       <StatCard value={total} label="games in library" index={0} />
       <StatCard value={`${hours}h`} label="hours played" index={1} />
       <StatCard value={completed} label="completed" index={2} />

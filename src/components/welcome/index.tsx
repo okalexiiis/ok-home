@@ -61,7 +61,7 @@ export function Welcome() {
     <div className="flex items-center justify-between gap-4">
       {/* LEFT — character reveal */}
       <section className="font-serif">
-        <h1 className="text-3xl font-bold text-foreground">
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground">
           {titleChars.map(({ char, key, delay }) => (
             <m.span
               key={key}

@@ -37,11 +37,11 @@ export function Library({ games }: { games: Game[] }) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease }}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-y-2">
         <h2 className="font-mono text-xs text-foreground-sec tracking-widest uppercase">
           library
         </h2>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-1 justify-end">
           {filters.map((f) => (
             <button
               key={f.value}

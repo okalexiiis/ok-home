@@ -30,7 +30,7 @@ export default async function ThoughtPost({
   if (!post) notFound();
 
   return (
-    <article className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 selection:bg-purple selection:text-background">
+    <article className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 px-4 md:px-0 selection:bg-purple selection:text-background">
       <nav className="font-mono text-sm">
         <Link
           href="/thoughts"

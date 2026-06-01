@@ -32,10 +32,10 @@ export default async function Games() {
   const lastCompleted = pickLastCompleted(games);
 
   return (
-    <div className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 selection:bg-orange selection:text-background">
+    <div className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 px-4 md:px-0 selection:bg-orange selection:text-background">
       <header className="w-full border-b-4 border-orange flex items-center justify-between pb-2">
-        <h1 className="font-mono text-4xl text-orange font-bold">games</h1>
-        <nav className="flex gap-4 font-mono text-sm text-foreground-sec">
+        <h1 className="font-mono text-2xl md:text-4xl text-orange font-bold">games</h1>
+        <nav className="flex flex-wrap gap-2 md:gap-4 font-mono text-sm text-foreground-sec">
           <Link href="/" className="hover:text-foreground transition-colors">
             home
           </Link>

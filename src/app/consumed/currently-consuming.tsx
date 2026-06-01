@@ -20,7 +20,7 @@ export function CurrentlyConsuming({ items }: { items: ConsumedItem[] }) {
       <h2 className="font-mono text-xs text-foreground-sec tracking-widest uppercase">
         currently consuming
       </h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {items.map((item, i) => (
           <m.div
             key={item.slug}

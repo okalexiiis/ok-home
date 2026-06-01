@@ -39,10 +39,10 @@ export default async function Music() {
   const hasPicks = pick || playlist;
 
   return (
-    <div className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 selection:bg-blue selection:text-background">
+    <div className="flex flex-col flex-1 items-center gap-8 md:w-[60%] pt-16 px-4 md:px-0 selection:bg-blue selection:text-background">
       <header className="w-full border-b-4 border-blue flex items-center justify-between pb-2">
-        <h1 className="font-mono text-4xl text-blue font-bold">music</h1>
-        <nav className="flex gap-4 font-mono text-sm text-foreground-sec">
+        <h1 className="font-mono text-2xl md:text-4xl text-blue font-bold">music</h1>
+        <nav className="flex flex-wrap gap-2 md:gap-4 font-mono text-sm text-foreground-sec">
           <Link href="/" className="hover:text-foreground transition-colors">
             home
           </Link>
@@ -53,7 +53,7 @@ export default async function Music() {
       </header>
 
       {hasPicks ? (
-        <div className="grid grid-cols-2 gap-8 w-full items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
           <RecentScrobbles tracks={tracks} />
           <div className="flex flex-col gap-4">
             {pick && <MusicPickCard pick={pick} />}
@@ -64,7 +64,7 @@ export default async function Music() {
         <RecentScrobbles tracks={tracks} />
       )}
 
-      <div className="grid grid-cols-3 gap-8 w-full border-b border-foreground/10 pb-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full border-b border-foreground/10 pb-4">
         <TopSongs tracks={topTracks} />
         <TopAlbums albums={topAlbums} />
         <TopArtists artists={artists} />

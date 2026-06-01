@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center gap-4 md:w-[60%] pt-16 selection:bg-foreground selection:text-background">
+    <div className="flex flex-col flex-1 items-center gap-4 md:w-[60%] pt-16 px-4 md:px-0 selection:bg-foreground selection:text-background">
       <div className="w-full">
         <Welcome />
       </div>
